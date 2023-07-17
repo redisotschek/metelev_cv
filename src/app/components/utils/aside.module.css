@@ -1,0 +1,11 @@
+.aside_item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}

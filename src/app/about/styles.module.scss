@@ -1,0 +1,22 @@
+
+$blue: rgb(59, 130, 246);
+
+.list {
+    list-style: square;
+    padding: 1rem;
+    li: {
+        margin: 1rem 0;
+    }
+}
+
+.aside_block {
+    .title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        height: auto;
+        text-transform: uppercase;
+        background-color: $blue;
+        padding: 0 2rem;
+    }
+}
