@@ -119,7 +119,7 @@ export default function About() {
             <Contacts className='max-sm:px-2'/>
             <div className='flex items-center text-lg mt-3'>
               <FaFilePdf/>
-              <Link href='/resume.pdf'>
+              <Link href='/Metelev_CV.pdf'>
                 Download CV
               </Link>
             </div>
