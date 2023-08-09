@@ -10,8 +10,8 @@ const contacts: Array<ItemProps> = [
         icon: <PhoneIcon/>
     },
     {
-        link: 'mailto:redisotschek@gmail.com',
-        text: 'redisotschek@gmail.com',
+        link: 'mailto:me@dimas.wtf',
+        text: 'me@dimas.wtf',
         icon: <MailIcon/>
     },
     {
