@@ -106,7 +106,7 @@ export default function CV() {
             <div className='flex sm:flex-col max-sm:flex-row items-center'>
               <Image
                   className={`rounded-full p-2`}
-                  src='/profilepic.jpg'
+                  src='/me.jpg'
                   width={100}
                   height={100}
                   alt='My photo'
