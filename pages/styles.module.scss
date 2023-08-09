@@ -1,11 +1,11 @@
 
 .main {
     background-color: rgb(38, 38, 39);
-    color: white;
 }
 
 .infoText {
     position: fixed;
+    color: white;
     top: 40%;
     left: 0;
     font-size: 1.5rem;
@@ -14,7 +14,7 @@
     height: auto;
     text-transform: uppercase;
     max-width: 100%;
-    background-color: rgb(59, 130, 246);
+    background-color: #618EFB;
     padding: 10px 2rem;
     z-index: 1000;
 

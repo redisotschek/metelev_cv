@@ -20,7 +20,7 @@ export default function UnderConstruction() {
             Site is Under Construction
           </h1>
           <p>
-            <Link href='/cv'>Perhaps, you&rsquo;d like to see my CV?</Link>
+            <Link href='/cv'>Would you like to see my CV?</Link>
           </p>
       </div>
       <canvas className="canvas"></canvas>

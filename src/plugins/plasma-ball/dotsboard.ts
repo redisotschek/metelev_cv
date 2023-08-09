@@ -14,6 +14,8 @@ export class DotsBoard {
   private mouseY: number = 0
   private mouseEvent: boolean = false
   private filledDots: boolean = false
+  private image: HTMLImageElement = new Image();
+  private imageLoaded: boolean = false;
 
   constructor(canvas: HTMLCanvasElement, dotsCount: number, centralCircleRadius: number, mouseEvent?: boolean, filledDots?: boolean) {
     this.canvas = <HTMLCanvasElement>canvas
@@ -28,6 +30,12 @@ export class DotsBoard {
     this.centerY = this.canvas.height / 2
     this.mouseEvent = <typeof this.mouseEvent>mouseEvent
     this.filledDots = <typeof this.filledDots>filledDots
+
+    this.image = new Image();
+    this.image.onload = () => {
+      this.imageLoaded = true;
+    }
+    this.image.src = '/orb_center.svg';
 
     if (this.mouseEvent) {
       window.addEventListener('mousemove', event => {
@@ -116,7 +124,7 @@ export class DotsBoard {
 
     // Center cycle
     this.ctx.fillStyle = 'rgb(1, 1, 1)'
-    this.ctx.strokeStyle = 'rgba(59, 130, 246, 0.9)'
+    this.ctx.strokeStyle = 'rgba(97, 219, 251, 0.9)'
     this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
     this.ctx.beginPath()
     this.ctx.arc(this.ctx.canvas.width / 2, this.ctx.canvas.height / 2, this.centralCircleRadius, 0, Math.PI * 2, true)
@@ -142,13 +150,18 @@ export class DotsBoard {
     }
 
     // Center cycle gradient
-    this.ctx.beginPath()
-    let gradient = this.ctx.createRadialGradient(this.ctx.canvas.width / 2, this.ctx.canvas.height / 2, 0, this.ctx.canvas.width / 2, this.ctx.canvas.height / 2, this.centralCircleRadius / 3)
-    gradient.addColorStop(0, 'rgb(59, 130, 246)')
-    gradient.addColorStop(1, 'transparent')
-    this.ctx.fillStyle = gradient
-    this.ctx.arc(this.ctx.canvas.width / 2, this.ctx.canvas.height / 2, this.centralCircleRadius, 0, Math.PI * 2, true)
-    this.ctx.fill()
+    
+    if (this.imageLoaded) {
+      this.ctx.drawImage(this.image, this.ctx.canvas.width / 2 - 50, this.ctx.canvas.height / 2 - 50, 100, 100);
+    } else {
+      this.ctx.beginPath()
+      let gradient = this.ctx.createRadialGradient(this.ctx.canvas.width / 2, this.ctx.canvas.height / 2, 0, this.ctx.canvas.width / 2, this.ctx.canvas.height / 2, this.centralCircleRadius / 3)
+      gradient.addColorStop(0, 'transparent')
+      gradient.addColorStop(1, 'transparent')
+      this.ctx.fillStyle = gradient
+      this.ctx.arc(this.ctx.canvas.width / 2, this.ctx.canvas.height / 2, this.centralCircleRadius, 0, Math.PI * 2, true)
+      this.ctx.fill()
+    }
   }
 
   private mousePosition(Mx: number, My: number) {

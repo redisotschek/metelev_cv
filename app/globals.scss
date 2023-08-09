@@ -8,13 +8,13 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 10, 10, 10;
     --background-end-rgb: 0, 0, 0;
   }
-} */
+}
 
 $font-path: './assets/fonts/';
 
@@ -44,20 +44,15 @@ body {
   justify-content: center;
   align-items: center;
   color: rgb(var(--foreground-rgb));
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
+  background: linear-gradient(
+      rgb(var(--background-start-rgb)),
       rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+    );
+  background-attachment: fixed;
 }
 
 canvas {
   position: relative;
   height: 100%;
   width: 100%;
-}
-
-.half-screen {
-  width: 50%;
 }

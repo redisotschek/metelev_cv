@@ -79,7 +79,7 @@ const jobs: JobInfoList = [
   }
 ]
 
-const technologies = ['Vue.js','Angular','React','JavaScript','TypeScript','CSS','HTML', 'Canvas', 'Pixi.js']
+const technologies = ['Vue.js','Angular','React','JavaScript','TypeScript', 'Pixi.js']
 
 const degree: DegreeInfo =  {
   title: 'Bachelor of Software Engineering',
