@@ -1,15 +1,9 @@
 "use client"
 import '../app/globals.scss'
 import styles from './styles.module.scss'
-import type { Metadata } from 'next'
 import { PlasmaBall } from '@/plugins/plasma-ball'
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-
-export const metadata: Metadata = {
-  title: 'Dima Metelev',
-  description: 'Dmitry Metelev`s homepage',
-}
 
 const dotsCount = 50;
 const radius = 150;

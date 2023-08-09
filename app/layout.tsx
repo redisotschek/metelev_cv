@@ -1,4 +1,3 @@
-"use client"
 import './globals.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -9,7 +8,6 @@ export const metadata: Metadata = {
   title: 'Dima Metelev',
   description: 'Dmitry Metelev`s homepage',
 }
-let templateToRender: React.ReactNode = null;
 
 export default function RootLayout({
   children,
