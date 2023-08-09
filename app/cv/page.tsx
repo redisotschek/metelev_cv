@@ -79,7 +79,7 @@ const jobs: JobInfoList = [
   }
 ]
 
-const technologies = ['Vue.js','Angular','React','JavaScript','TypeScript','CSS','HTML']
+const technologies = ['Vue.js','Angular','React','JavaScript','TypeScript','CSS','HTML', 'Canvas', 'Pixi.js']
 
 const degree: DegreeInfo =  {
   title: 'Bachelor of Software Engineering',
@@ -98,7 +98,7 @@ const degree: DegreeInfo =  {
   ]
 }
 
-export default function About() {
+export default function CV() {
     return (
       <article className='flex min-h-screen md:flex-row max-sm:flex-col max-sm:items-center md:items-start justify-around'>
         <aside id='about-me' className={`flex flex-col md:sticky md:max-w-max md:w-1/3 md:h-screen max-sm:w-full max-sm:gap-2 top-0 px-1 ${styles.aside}`}>

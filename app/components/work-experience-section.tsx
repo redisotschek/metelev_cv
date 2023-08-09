@@ -48,7 +48,7 @@ export default function WorkExperience ({jobs}: {jobs: JobInfoList}) {
       {
         jobs.map((job: JobInfo) => {
           return (
-            <CompanyExperience {...job} />
+            <CompanyExperience key={job.title} {...job} />
           )
         })
       }

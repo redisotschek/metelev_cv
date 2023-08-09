@@ -41,7 +41,7 @@ function mapItemProps (item: ItemProps, index: number) {
     return (
         <>
             <Item key={index} {...item}/> 
-            {item.chip && <Chip key={index + 'chip'} children={item.chip}/>}                
+            {item.chip && <Chip key={index + 'chip'}>{item.chip}</Chip>}                
         </>
     )
 }
