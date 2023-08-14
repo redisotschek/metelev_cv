@@ -1,29 +1,50 @@
-"use client"
+"use client";
 import '../app/globals.scss'
 import styles from './styles.module.scss'
-import { PlasmaBall } from '@/plugins/plasma-ball'
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { SmartCat } from '@/plugins/cat_module/src/cat'
+import { Application } from 'pixi.js'
 
-const dotsCount = 50;
-const radius = 150;
+import bg from '../public/grass.png'
 
 export default function UnderConstruction() {
-  let plasmaBallInstance: any = useRef(null);
+  let app: Application<HTMLCanvasElement>;
+
+  let catInstance: SmartCat;
+
   useEffect(() => {
-    plasmaBallInstance.current = new PlasmaBall(dotsCount, radius);
-  })
+    app = new Application<HTMLCanvasElement>({
+      resizeTo: window,
+      backgroundAlpha: 0,
+    });
+  
+    document.body.appendChild(app.view);
+    catInstance = new SmartCat(app, document.body);
+  }, []);
+
+  function unload() {
+    catInstance.destroy();
+    app.destroy();
+  }
+
   return (
-    <main className={`flex min-h-screen md:flex-row max-sm:flex-col items-center justify-between ${styles.main}`}>
+    <main className={styles.main}>
       <div className={styles.infoText}>
           <h1>
             Site is Under Construction
           </h1>
           <p>
-            <Link href='/cv'>Would you like to see my CV?</Link>
+            <Link onClick={unload} href='/cv' prefetch>Would you like to see my CV?</Link>
           </p>
       </div>
-      <canvas className="canvas"></canvas>
+      <style jsx global>
+        {`
+            html, body {
+                background: url(${bg.src});
+            }
+        `}
+      </style>
     </main>
   )
 }
