@@ -1,8 +1,11 @@
+import dynamic from 'next/dynamic'
 
-import UnderConstruction from '../pages/underconstruction'
+const UnderConstructionNoSSR = dynamic(() => import('../pages/underconstruction'), {
+  ssr: false
+})
 
 export default function Home() {
   return (
-    <UnderConstruction />
+    <UnderConstructionNoSSR />
   )
 }

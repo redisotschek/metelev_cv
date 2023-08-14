@@ -8,7 +8,7 @@ import { Application } from 'pixi.js'
 
 import bg from '../public/grass.png'
 
-export const dynamic = "force-dynamic";
+const isServer = () => typeof window === 'undefined';
 
 export default function UnderConstruction() {
   let app: Application<HTMLCanvasElement>;
@@ -16,13 +16,15 @@ export default function UnderConstruction() {
   let catInstance: SmartCat;
 
   useEffect(() => {
-    app = new Application<HTMLCanvasElement>({
-      resizeTo: window,
-      backgroundAlpha: 0,
-    });
-  
-    document.body.appendChild(app.view);
-    catInstance = new SmartCat(app, document.body);
+    if (!isServer()) {
+      app = new Application<HTMLCanvasElement>({
+        resizeTo: window,
+        backgroundAlpha: 0,
+      });
+    
+      document.body.appendChild(app.view);
+      catInstance = new SmartCat(app, document.body);
+    }
   }, []);
 
   function unload() {
