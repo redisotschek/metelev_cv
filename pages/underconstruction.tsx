@@ -8,6 +8,8 @@ import { Application } from 'pixi.js'
 
 import bg from '../public/grass.png'
 
+export const dynamic = "force-dynamic";
+
 export default function UnderConstruction() {
   let app: Application<HTMLCanvasElement>;
 
