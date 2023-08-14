@@ -1,5 +1,4 @@
 import { Application, Text, TextStyle } from "pixi.js";
-import { sound } from '@pixi/sound';
 import { Cat, Vector, getCardinal } from "./CatPixiInstance";
 
 
@@ -106,9 +105,6 @@ export class SmartCat extends Cat {
         }
     }
     async loadTextures(): Promise<void> {
-        this.zoomSounds.forEach((s, i) => {
-            sound.add('zoom'+i, s);
-        });
         return super.loadTextures();
     }
     clickListener(event: MouseEvent): void {
@@ -195,7 +191,6 @@ export class SmartCat extends Cat {
                 const randomY2 = Math.ceil(Math.random() * this.app.screen.height);
                 const randomFinishX = Math.floor(Math.random() * this.app.screen.width);
                 const randomFinishY = Math.floor(Math.random() * this.app.screen.height);
-                const randSoundIndex = Math.floor(Math.random()*this.zoomSounds.length);
                 const callbacks = [
                     () => {
                         const firstTarget = new Vector(randomX1, randomY1)
@@ -204,10 +199,6 @@ export class SmartCat extends Cat {
                     () => {
                         const secondTarget = new Vector(randomX2, randomY2);
                         this.setTarget(secondTarget, 'running');
-                        this.currentMusic = 'zoom'+randSoundIndex
-                        sound.play(this.currentMusic, {
-                            volume: 0.5,
-                        });
                     },
                     () => {
                         this.setTarget(new Vector(randomFinishX, randomFinishY), 'running');
@@ -297,9 +288,6 @@ export class SmartCat extends Cat {
             }),
             aiIntentCompleted: addEventListener('aiIntentCompleted', () => {
                 this.aiTimer = 0;
-                if (this.currentMusic) {
-                    sound.stop(this.currentMusic);
-                }
             }),
             stateChanged: addEventListener('stateChanged', () => {
                 currStateText.text = `Current state: ${this.currState}`;

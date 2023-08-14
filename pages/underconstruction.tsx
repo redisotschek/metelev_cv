@@ -11,25 +11,25 @@ import bg from '../public/grass.png'
 const isServer = () => typeof window === 'undefined';
 
 export default function UnderConstruction() {
-  let app: Application<HTMLCanvasElement>;
+  let app = useRef<Application<HTMLCanvasElement>>();
 
-  let catInstance: SmartCat;
+  let catInstance = useRef<SmartCat>();
 
   useEffect(() => {
     if (!isServer()) {
-      app = new Application<HTMLCanvasElement>({
+      app.current = new Application<HTMLCanvasElement>({
         resizeTo: window,
         backgroundAlpha: 0,
       });
-    
-      document.body.appendChild(app.view);
-      catInstance = new SmartCat(app, document.body);
+
+      document.body.appendChild(app.current.view);
+      catInstance.current = new SmartCat(app.current, document.body);
     }
   }, []);
 
   function unload() {
-    catInstance.destroy();
-    app.destroy();
+    catInstance.current?.destroy();
+    app.current?.destroy();
   }
 
   return (

@@ -136,7 +136,6 @@ export class Cat {
     ]
     customFps: number | null;
     bootBlock: HTMLElement;
-    currentMusic: string;
     initialSpriteTextures: Texture[] = [];
     statesList = Object.keys(spriteMap);
     defaultState = 'sitting_down';
