@@ -134,7 +134,7 @@ export class Cat {
         './sounds/zoom1.wav',
         './sounds/zoom2.wav'
     ]
-    customFps: number = null;
+    customFps: number;
     bootBlock: HTMLElement;
     currentMusic: string;
     initialSpriteTextures: Texture[] = [];
