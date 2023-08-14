@@ -137,7 +137,9 @@ export class SmartCat extends Cat {
         } else {
             if (this.brain.nextIntent.length > 0) {
                 const cb = this.brain.nextIntent.shift();
-                cb();
+                if (cb) {
+                    cb();
+                }
             }
         }
 
@@ -156,8 +158,9 @@ export class SmartCat extends Cat {
     unlockMouse() {
         this.isMouseCaptured = false;
         const ctx = this.app.view;
-        ctx.style.cursor = 'inherit';
-
+        if (ctx && ctx.style) {
+            ctx.style.cursor = 'inherit';
+        }
     }
     aiMethods: Record<string, Function> = {
         chooseRandomIntent: () => {

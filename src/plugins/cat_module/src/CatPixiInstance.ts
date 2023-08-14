@@ -134,14 +134,14 @@ export class Cat {
         './sounds/zoom1.wav',
         './sounds/zoom2.wav'
     ]
-    customFps: number;
+    customFps: number | null;
     bootBlock: HTMLElement;
     currentMusic: string;
     initialSpriteTextures: Texture[] = [];
     statesList = Object.keys(spriteMap);
     defaultState = 'sitting_down';
     prevState = '';
-    _currState = '';
+    _currState: string = '';
     set currState(state) {
         this._currState = state;
         this.stateTimer = 0;
@@ -159,10 +159,10 @@ export class Cat {
     
     stateTimer: number = 0;
 
-    target: Vector = null;
+    target: Vector | null = null;
 
     screenCenter: Vector;
-    lastClick: Vector = null;
+    lastClick: Vector | null = null;
     constructor(app: Application, bootBlock: HTMLElement) {
         this.app = app;
         if (!app) {
@@ -230,7 +230,7 @@ export class Cat {
         this.setCatPosition(new Vector(nextX, nextY), vector.normalized);
         return;
     }
-    setCatPosition ({x, y}: Vector, vector: Vector = null) {
+    setCatPosition ({x, y}: Vector, vector: Vector | null = null) {
         // move the sprite to the center of the screen
         if (vector) {
             const direction = getCardinal(vector);
@@ -293,20 +293,25 @@ export class Cat {
     }
     
     completeStateChange () {
-        if (dynamicStates[this.currState].postState) {
-            this.currState = dynamicStates[this.currState].postState;
-            this.changeState();
+        if (dynamicStates[this.currState] && dynamicStates[this.currState].postState) {
+            const postState = dynamicStates[this.currState].postState;
+            if (postState) {
+                this.currState = postState;
+                this.changeState();
+            }
         }
     }
     init() {
         this.catSelf = new AnimatedSprite(this.initialSpriteTextures);
         this.catSelf.onComplete = this.completeStateChange.bind(this);
         this.app.stage.addChild(this.catSelf);
-        this.app.view.addEventListener('click', this.clickListener.bind(this));
-        this.app.view.addEventListener('mousemove', this.mouseMoveListener.bind(this));
         this.setCatPosition(this.screenCenter);
         this.catSelf.scale.set(3);
         this.catSelf.anchor.set(0.5);
+        // @ts-ignore
+        this.app.view.addEventListener('click', this.clickListener.bind(this));
+        // @ts-ignore
+        this.app.view.addEventListener('mousemove', this.mouseMoveListener.bind(this));
         // Listen for frame updates
         this.app.ticker.add((delta) => {
             this.stateManager(delta);
