@@ -1,17 +1,5 @@
-import { Application, Text, TextStyle } from "pixi.js";
-import { Cat, Vector, getCardinal } from "./CatPixiInstance";
-
-
-const textStyle = new TextStyle({
-    fontFamily: 'Arial',
-    fontSize: 36,
-    fill: 'white',
-})
-
-const currStateText = new Text('', textStyle);
-const aiStateText = new Text('', textStyle);
-aiStateText.y = 50;
-
+import { Application } from "pixi.js";
+import { Cat, Vector } from "./CatPixiInstance";
 
 
 class Brain {
@@ -266,9 +254,6 @@ export class SmartCat extends Cat {
     }
     init(debug = false) {
         super.init();
-        if (debug) {
-            this.app.stage.addChild(currStateText, aiStateText);
-        }
         const eventsObj = {
             targetReached: addEventListener('targetReached', () => {
                 if (this.isHunting) {
@@ -290,10 +275,8 @@ export class SmartCat extends Cat {
                 this.aiTimer = 0;
             }),
             stateChanged: addEventListener('stateChanged', () => {
-                currStateText.text = `Current state: ${this.currState}`;
             }),
             behaviorChanged: addEventListener('behaviorChanged', () => {
-                aiStateText.text = `Current ai state: ${this.brain.currentBehaviorState}`;
             })
         };
     }
