@@ -3,12 +3,9 @@ import '../app/globals.scss'
 import styles from './styles.module.scss'
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import SmartCat from '@/plugins/cat_module/src/cat'
 import { Application } from 'pixi.js'
 
 import bg from '../public/grass.png'
-
-const isServer = () => typeof window === 'undefined';
 
 export default function UnderConstruction() {
   let app = useRef<Application<HTMLCanvasElement>>();
@@ -16,7 +13,8 @@ export default function UnderConstruction() {
   let catInstance = useRef();
 
   useEffect(() => {
-    if (!isServer()) {
+    const initCat = async () => {
+      const SmartCat = (await import('@/plugins/cat_module/src/cat')).default;
       app.current = new Application<HTMLCanvasElement>({
         resizeTo: window,
         backgroundAlpha: 0,
@@ -26,6 +24,7 @@ export default function UnderConstruction() {
       // @ts-ignore
       catInstance.current = new SmartCat(app.current, document.body);
     }
+    initCat();
   }, []);
 
   return (
