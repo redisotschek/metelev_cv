@@ -3,7 +3,7 @@ import '../app/globals.scss'
 import styles from './styles.module.scss'
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { SmartCat } from '@/plugins/cat_module/src/cat'
+import SmartCat from '@/plugins/cat_module/src/cat'
 import { Application } from 'pixi.js'
 
 import bg from '../public/grass.png'
@@ -13,7 +13,7 @@ const isServer = () => typeof window === 'undefined';
 export default function UnderConstruction() {
   let app = useRef<Application<HTMLCanvasElement>>();
 
-  let catInstance = useRef<SmartCat>();
+  let catInstance = useRef();
 
   useEffect(() => {
     if (!isServer()) {
@@ -21,16 +21,12 @@ export default function UnderConstruction() {
         resizeTo: window,
         backgroundAlpha: 0,
       });
-
+  
       document.body.appendChild(app.current.view);
+      // @ts-ignore
       catInstance.current = new SmartCat(app.current, document.body);
     }
   }, []);
-
-  function unload() {
-    catInstance.current?.destroy();
-    app.current?.destroy();
-  }
 
   return (
     <main className={styles.main}>
@@ -39,13 +35,15 @@ export default function UnderConstruction() {
             Site is Under Construction
           </h1>
           <p>
-            <Link onClick={unload} href='/cv' prefetch>Would you like to see my CV?</Link>
+            <Link href='/cv' prefetch>Would you like to see my CV?</Link>
           </p>
       </div>
       <style jsx global>
         {`
             html, body {
                 background: url(${bg.src});
+                background-size: contain;
+                background-repeat: repeat;
             }
         `}
       </style>
