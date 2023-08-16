@@ -2,26 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-// @media (prefers-color-scheme: dark) {
-//   :root {
-//     --foreground-rgb: 255, 255, 255;
-//     --background-start-rgb: 10, 10, 10;
-//     --background-end-rgb: 0, 0, 0;
-//   }
-// }
 
 $font-path: './assets/fonts/';
 
 @font-face {
-  font-family: 'ArcadeClassic';
-  src: url('#{$font-path}ArcadeClassic.eot?#iefix') format('embedded-opentype'), url('#{$font-path}ArcadeClassic.woff') format('woff'), url('#{$font-path}ArcadeClassic.ttf') format('truetype'),
-    url('#{$font-path}ArcadeClassic.svg#ArcadeClassic') format('svg');
+  font-family: 'PressStart2P';
+  src: url('#{$font-path}PressStart2P-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -43,11 +29,7 @@ body {
   font-family: 'Arial, sans-serif';
   justify-content: center;
   align-items: center;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      rgb(var(--background-start-rgb)),
-      rgb(var(--background-end-rgb))
-    );
+  color: white;
   background-attachment: fixed;
 }
 

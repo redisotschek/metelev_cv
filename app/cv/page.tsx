@@ -100,7 +100,7 @@ const degree: DegreeInfo =  {
 
 export default function CV() {
     return (
-      <article className='flex min-h-screen md:flex-row max-sm:flex-col max-sm:items-center md:items-start justify-around'>
+      <article className='flex min-h-screen md:flex-row max-sm:flex-col max-sm:items-center md:items-start justify-around bg-white text-black'>
         <aside id='about-me' className={`flex flex-col md:sticky md:max-w-max md:w-1/3 md:h-screen max-sm:w-full max-sm:gap-2 top-0 px-1 ${styles.aside}`}>
           <div id='name-title' className='my-3'>
             <div className='flex sm:flex-col max-sm:flex-row items-center'>
