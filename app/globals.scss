@@ -13,20 +13,20 @@
 
 html,
 body {
-  font-family: 'PressStart2P', sans-serif;
+  padding: 0;
   margin: 0;
-  cursor: url('#{paths.$assets}cursor.png'),auto;
+  font-family: 'PressStart2P', sans-serif;
+  cursor: url('#{paths.$assets}cursor.png'), auto;
   scroll-behavior: smooth !important;
   overflow-y: hidden;
   scroll-snap-type: y mandatory;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-	html {
-		scroll-behavior: auto !important;
-	}
+  html {
+    scroll-behavior: auto !important;
+  }
 }
-
 
 // section {
 //   padding: 1rem;
