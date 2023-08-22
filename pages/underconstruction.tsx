@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import '../app/globals.scss'
 import styles from './styles.module.scss'
 import { useEffect, useRef } from 'react'
@@ -13,8 +13,7 @@ export default function UnderConstruction() {
 
   useEffect(() => {
     const initCat = async () => {
-      // const { SmartCat } = await import('cat_module');
-      const { SmartCat } = await import('@/plugins/cat_module/src') as any;
+      const {SmartCat} = await import('cat_module');
       app.current = new Application({
         resizeTo: window,
         backgroundAlpha: 0,

@@ -16,3 +16,8 @@ export type DegreeInfo = {
   courses: string,
   points: Array<string>
 }
+
+export type Section = {
+  title: string,
+  id: string,
+}
