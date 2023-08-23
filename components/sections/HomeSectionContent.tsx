@@ -2,8 +2,6 @@ import styles from './home.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import mePixel from '../../app/assets/images/big.png';
-
 const networks = [
   {
     name: 'linkedin',
@@ -60,7 +58,7 @@ export const HomeSectionContent = ({ isMobileView }) => {
         </div>
         <div>
           <Image
-            src={mePixel}
+            src="/images/big.png"
             width={isMobileView ? 200 : 500}
             height={isMobileView ? 200 : 500}
             alt="me"
