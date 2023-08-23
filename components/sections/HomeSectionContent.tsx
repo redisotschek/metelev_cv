@@ -41,7 +41,7 @@ export const HomeSectionContent = ({ isMobileView }) => {
       className={`section flex flex-col items-center h-full max-md:pt-12 md:w-9/12 gap-5 m-auto md:justify-center`}
     >
       <div
-        className={`${styles.card} py-12 max-md:px-2 md:px-12 card__text flex max-md:flex-col-reverse md:flex-row gap-4 items-center max-md:justify-start md:justify-around`}
+        className={`${styles.card} rounded-md py-12 max-md:px-2 md:px-12 card__text flex max-md:flex-col-reverse md:flex-row gap-4 items-center max-md:justify-start md:justify-around`}
       >
         <div className="md:text-left">
           <h1 className="text-xl font-bold">
