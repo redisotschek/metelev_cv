@@ -3,6 +3,17 @@ import { HomeSectionContent } from '@/components/sections/HomeSectionContent';
 import { headers } from 'next/headers';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Dima Metelev',
+  description: 'Frontend Developer - Vue, Angular, React, SCSS, TypeScript',
+  openGraph: {
+    title: 'Dima Metelev | Frontend Developer',
+    description: 'Vue, Angular 2+, Next.js, SCSS, TypeScript',
+    images: '/images/thumbnail.png',
+  },
+};
 
 export default function Home(props) {
   const headersList = headers();
@@ -14,7 +25,7 @@ export default function Home(props) {
 
   const sections = [
     {
-      title: 'Home',
+      title: 'Dima Metelev | Frontend Developer',
       id: 'home',
       content: HomeSectionContent({ isMobileView }),
     },
