@@ -55,6 +55,15 @@ export const HomeSectionContent = ({ isMobileView }) => {
             <span className={`${styles.greenText}`}>fullstack</span>{' '}
             development.
           </h2>
+          <div className=" mt-5">
+            <Link
+              href="/Metelev_CV.pdf"
+              target="_blank"
+              className="p-2 bg-blue-500 rounded-md"
+            >
+              Download CV
+            </Link>
+          </div>
         </div>
         <div>
           <Image
@@ -71,13 +80,6 @@ export const HomeSectionContent = ({ isMobileView }) => {
         }
       >
         {networks.map(getNetworkLink)}
-        <Link
-          href="/Metelev_CV.pdf"
-          target="_blank"
-          className="p-2 bg-blue-500 rounded-md"
-        >
-          Download CV
-        </Link>
       </div>
     </div>
   );
