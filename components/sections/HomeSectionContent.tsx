@@ -67,7 +67,7 @@ export const HomeSectionContent = ({ isMobileView }) => {
         </div>
         <div>
           <Image
-            src="/images/big.PNG"
+            src="/images/big.png"
             width={isMobileView ? 200 : 500}
             height={isMobileView ? 200 : 500}
             alt="me"
