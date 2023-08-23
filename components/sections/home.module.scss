@@ -1,19 +1,17 @@
-$triadic-blue: #3b82f6;
-$triadic-red: #f63b82;
-$triadic-green: #82f63b;
+@use '_colors' as colors;
 
 .card {
   color: white;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: colors.$slightly-black-bg;
   border-radius: 5px;
 }
 
 .blueText {
-  color: $triadic-blue;
+  color: colors.$triadic-blue;
 }
 .redText {
-  color: $triadic-red;
+  color: colors.$triadic-red;
 }
 .greenText {
-  color: $triadic-green;
+  color: colors.$triadic-green;
 }

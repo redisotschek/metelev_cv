@@ -1,4 +1,5 @@
-@use 'assets/styles/paths' as paths;
+@use '_paths' as paths;
+@use '_colors' as colors;
 
 @tailwind base;
 @tailwind components;
@@ -22,12 +23,17 @@ body {
   scroll-snap-type: y mandatory;
 }
 
+header {
+  background-color: colors.$slightly-black-bg;
+  color: white;
+}
+
 @media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto !important;
   }
 }
 
-// section {
-//   padding: 1rem;
-// }
+section {
+  position: relative;
+}
