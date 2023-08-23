@@ -37,28 +37,34 @@ const getNetworkLink = ({ name, pathToIcon, link }) => {
   );
 };
 
-export const HomeSectionContent = () => {
+export const HomeSectionContent = ({ isMobileView }) => {
   return (
     <div
-      className={`section flex flex-col items-center h-full md:w-9/12 gap-5 m-auto justify-center`}
+      className={`section flex flex-col items-center h-full max-md:pt-12 md:w-9/12 gap-5 m-auto md:justify-center`}
     >
       <div
-        className={`${styles.card} py-12 px-12 card__text flex flex-row gap-4 items-center justify-around`}
+        className={`${styles.card} py-12 max-md:px-2 md:px-12 card__text flex max-md:flex-col-reverse md:flex-row gap-4 items-center max-md:justify-start md:justify-around`}
       >
-        <div>
-          <h1 className="text-xl font-bold text-left">
-            Hi! I'm <span className={`${styles.blueText}`}>Dima</span>
+        <div className="md:text-left">
+          <h1 className="text-xl font-bold">
+            Hi! I&apos;m <span className={`${styles.blueText}`}>Dima</span>
           </h1>
-          <h2>
-            I'm a <span className={`${styles.redText}`}>software engineer</span>{' '}
-            with 7 years of experience in{' '}
+          <h2 className="pt-4">
+            I&apos;m a{' '}
+            <span className={`${styles.redText}`}>software engineer</span> with
+            7 years of experience in{' '}
             <span className={`${styles.greenText}`}>frontend</span> and{' '}
             <span className={`${styles.greenText}`}>fullstack</span>{' '}
             development.
           </h2>
         </div>
         <div>
-          <Image src={mePixel} width={400} height={400} alt="me"></Image>
+          <Image
+            src={mePixel}
+            width={isMobileView ? 200 : 500}
+            height={isMobileView ? 200 : 500}
+            alt="me"
+          ></Image>
         </div>
       </div>
       <div

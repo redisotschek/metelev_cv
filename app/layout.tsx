@@ -1,15 +1,13 @@
-import './globals.scss'
+import './globals.scss';
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={`body`}>
-        {children}
-      </body>
+      <body className={`body`}>{children}</body>
     </html>
-  )
+  );
 }

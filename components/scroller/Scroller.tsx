@@ -3,7 +3,7 @@
 import styles from './styles.module.scss';
 import ScrollerSection from '../ScrollerSection';
 
-export default function (props) {
+export default function Scroller(props) {
   const { sections } = props;
   const sectionsWithRemovedContent = sections.map((section) => {
     const { content, ...rest } = section;
