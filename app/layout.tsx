@@ -19,7 +19,7 @@ export default function RootLayout({
           property="og:description"
           content="Vue, Angular 2+, Next.js, SCSS, TypeScript"
         />
-        <meta property="og:image" content="/images/thumbnail.png" />
+        <meta property="og:image" content="images/thumbnail.png" />
       </Head>
       <body className={`body`}>{children}</body>
     </html>
