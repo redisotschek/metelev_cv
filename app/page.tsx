@@ -25,32 +25,32 @@ export default function Home(props) {
 
   const sections = [
     {
-      title: 'Dima Metelev | Frontend Developer',
+      title: 'Home',
       id: 'home',
       content: HomeSectionContent({ isMobileView }),
     },
-    {
-      title: 'Experience',
-      id: 'experience',
-      content: '',
-    },
-    {
-      title: 'Projects',
-      id: 'projects',
-      content: '',
-    },
-    {
-      title: 'Contacts',
-      id: 'contacts',
-      content: (
-        <footer className="absolute bottom-0">no rights reserved</footer>
-      ),
-    },
+    // {
+    //   title: 'Experience',
+    //   id: 'experience',
+    //   content: '',
+    // },
+    // {
+    //   title: 'Projects',
+    //   id: 'projects',
+    //   content: '',
+    // },
+    // {
+    //   title: 'Contacts',
+    //   id: 'contacts',
+    //   content: (
+    //     <footer className="absolute bottom-0">no rights reserved</footer>
+    //   ),
+    // },
   ];
   // const UnderConstructionNoSSR = dynamic(() => import('@/pages/underconstruction'), {ssr: false})
   return (
     <>
-      <header className="fixed w-full flex flex-row justify-around py-2 top-0 z-50">
+      {/* <header className="fixed w-full flex flex-row justify-around py-2 top-0 z-50">
         {sections.map((section: any) => {
           return (
             <div key={section.id}>
@@ -60,7 +60,7 @@ export default function Home(props) {
             </div>
           );
         })}
-      </header>
+      </header> */}
       <Scroller sections={sections}></Scroller>
       {/* <UnderConstructionNoSSR /> */}
     </>
