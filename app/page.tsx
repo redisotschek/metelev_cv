@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'Frontend Developer - Vue, Angular, React, SCSS, TypeScript',
   openGraph: {
     title: 'Dima Metelev | Frontend Developer',
-    description: 'Vue, Angular 2+, Next.js, SCSS, TypeScript',
+    description: 'Vue, Angular 2+, React, Next.js, SCSS, TypeScript',
     images: '/images/thumbnail.png',
   },
 };
@@ -29,26 +29,28 @@ export default function Home(props) {
       id: 'home',
       content: HomeSectionContent({ isMobileView }),
     },
-    // {
-    //   title: 'Experience',
-    //   id: 'experience',
-    //   content: '',
-    // },
-    // {
-    //   title: 'Projects',
-    //   id: 'projects',
-    //   content: '',
-    // },
-    // {
-    //   title: 'Contacts',
-    //   id: 'contacts',
-    //   content: <footer className="absolute bottom-0">no rights reserved</footer>,
-    // },
+    {
+      title: 'Experience',
+      id: 'experience',
+      content: '',
+    },
+    {
+      title: 'Projects',
+      id: 'projects',
+      content: '',
+    },
+    {
+      title: 'Contacts',
+      id: 'contacts',
+      content: (
+        <footer className="absolute bottom-0">no rights reserved</footer>
+      ),
+    },
   ];
   // const UnderConstructionNoSSR = dynamic(() => import('@/pages/underconstruction'), {ssr: false})
   return (
     <>
-      {/* <header className="fixed w-full flex flex-row justify-around py-2 top-0 z-50">
+      <header className="fixed w-full flex flex-row justify-around py-2 top-0 z-50">
         {sections.map((section: any) => {
           return (
             <div key={section.id}>
@@ -58,7 +60,7 @@ export default function Home(props) {
             </div>
           );
         })}
-      </header> */}
+      </header>
       <Scroller sections={sections}></Scroller>
       {/* <UnderConstructionNoSSR /> */}
     </>
