@@ -2,13 +2,22 @@
 $sections-bg-colors: rgba(14, 8, 30, 1), rgba(22, 5, 73, 1), rgba(9, 69, 142, 1),
   rgba(36, 142, 254, 1);
 
+.nav {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white;
+  pointer-events: none;
+
+  a {
+    pointer-events: auto;
+  }
+}
+
 .scroller {
   section {
     height: 100vh;
-  }
-
-  &::-webkit-scrollbar {
-    display: none;
   }
 
   section.scroller__section {
@@ -38,6 +47,47 @@ $sections-bg-colors: rgba(14, 8, 30, 1), rgba(22, 5, 73, 1), rgba(9, 69, 142, 1)
           nth($sections-bg-colors, 2)
         )
         no-repeat;
+  }
+
+  section:nth-child(2) {
+    background: url('../../app/assets/backgrounds/stars.gif'),
+      radial-gradient(
+        200% 20% at bottom,
+        rgba(36, 142, 254, 1) 10%,
+        rgba(36, 142, 254, 1),
+        rgba(153, 197, 230, 1),
+        rgba(0, 68, 124, 1),
+        rgba(1, 40, 74, 1),
+        rgb(22, 5, 73)
+      );
+  }
+
+  section:nth-child(3) {
+    background:
+      url('../../app/assets/backgrounds/grass_top.png') left bottom 0 / 64px
+        repeat-x,
+      url('../../app/assets/cloud_left.png') left 20% / 200px auto no-repeat,
+      url('../../app/assets/cloud_right.png') right 15% / 200px auto no-repeat,
+      url('../../app/assets/cloud_small.png') center 30% / 200px auto no-repeat,
+      radial-gradient(
+        200% 20% at top,
+        rgba(36, 142, 254, 1) 10%,
+        rgba(36, 142, 254, 1),
+        rgba(36, 142, 254, 1)
+      ),
+      linear-gradient(
+        180deg,
+        rgba(36, 142, 254, 1),
+        hsl(208deg 83% 68%),
+        hsl(209deg 91% 64%),
+        hsl(210deg 96% 60%),
+        hsl(211deg 99% 57%),
+        hsl(208deg 92% 52%),
+        hsl(205deg 94% 48%),
+        hsl(204deg 100% 44%),
+        hsl(203deg 100% 43%),
+        hsl(202deg 96% 42%) 100%
+      );
   }
 
   section:nth-child(n + 4) {

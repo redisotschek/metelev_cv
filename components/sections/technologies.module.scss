@@ -1,0 +1,28 @@
+@keyframes wobblingY1 {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes wobblingY2 {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+.container {
+  @media screen and (min-width: 768px) {
+    div:nth-child(even) {
+      animation: wobblingY1 10s alternate infinite;
+    }
+    div:nth-child(odd) {
+      animation: wobblingY2 10s alternate infinite;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+@use '_colors' as colors;
+
+.card {
+  position: relative;
+  max-width: 100%;
+  color: white;
+  background-color: colors.$slightly-black-bg;
+}

@@ -1,6 +1,6 @@
-import styles from './home.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Card } from '../blocks/card';
 
 const networks = [
   {
@@ -40,20 +40,16 @@ export const HomeSectionContent = ({ isMobileView }) => {
     <div
       className={`section flex flex-col items-center h-full max-md:pt-12 md:w-9/12 gap-5 m-auto md:justify-center`}
     >
-      <div
-        className={`${styles.card} rounded-md py-12 max-md:px-2 md:px-12 card__text flex max-md:flex-col-reverse md:flex-row gap-4 items-center max-md:justify-start md:justify-around`}
-      >
+      <Card className="gap-4 flex max-md:flex-col-reverse md:flex-row max-md:px-2 md:px-12 items-center max-md:justify-start md:justify-around">
         <div className="md:text-left">
           <h1 className="text-xl font-bold">
-            Hi! I&apos;m <span className={`${styles.blueText}`}>Dima</span>
+            Hi! I&apos;m <span className={'blueText'}>Dima</span>
           </h1>
           <h2 className="pt-4">
-            I&apos;m a{' '}
-            <span className={`${styles.redText}`}>software engineer</span> with
-            7 years of experience in{' '}
-            <span className={`${styles.greenText}`}>frontend</span> and{' '}
-            <span className={`${styles.greenText}`}>fullstack</span>{' '}
-            development.
+            I&apos;m a <span className={'redText'}>software engineer</span> with
+            <span className={'redText'}> 7 years</span> of experience in{' '}
+            <span className={'greenText'}>frontend</span> and{' '}
+            <span className={'greenText'}>fullstack</span> development.
           </h2>
           <div className=" mt-5">
             <Link
@@ -73,7 +69,7 @@ export const HomeSectionContent = ({ isMobileView }) => {
             alt="me"
           ></Image>
         </div>
-      </div>
+      </Card>
       <div
         className={
           'flex flex-row gap-5 justify-center items-center w-full text-white'

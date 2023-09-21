@@ -1,0 +1,124 @@
+@use 'sass:math';
+$animation-length: 120s;
+
+@keyframes wobbling {
+  from {
+    translate: 0 5px;
+  }
+  to {
+    translate: 0 -5px;
+  }
+}
+
+@keyframes flipping-to-left {
+  48% {
+    transform: scaleX(0.9);
+  }
+  49% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(-1);
+  }
+  98% {
+    transform: scaleX(-0.9);
+  }
+  99% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+$start-position-1: 15px;
+$start-position-2: 45px;
+$start-position-3: 135px;
+
+@keyframes flying-left-1 {
+  0% {
+    right: -$start-position-1;
+  }
+
+  50% {
+    right: calc(100% + math.abs($start-position-1));
+  }
+
+  100% {
+    right: -$start-position-1;
+  }
+}
+
+@keyframes flying-left-2 {
+  0% {
+    right: -$start-position-2;
+  }
+
+  50% {
+    right: calc(100% + math.abs($start-position-2));
+  }
+
+  100% {
+    right: -$start-position-2;
+  }
+}
+
+@keyframes flying-left-3 {
+  0% {
+    right: -$start-position-3;
+  }
+
+  50% {
+    right: calc(100% + math.abs($start-position-3));
+  }
+
+  100% {
+    right: -$start-position-3;
+  }
+}
+
+@mixin stop-animation {
+  &::before {
+    animation-play-state: paused;
+  }
+  animation-play-state: paused;
+}
+
+@mixin zeppelin {
+  position: absolute;
+  &.stop {
+    @include stop-animation;
+  }
+  &::before {
+    animation: flipping-to-left $animation-length linear infinite;
+  }
+}
+
+.zeppelinContainer {
+  height: 106px;
+  max-height: 106px;
+  &:nth-of-type(1) {
+    .zeppelin {
+      @include zeppelin;
+      animation:
+        flying-left-1 $animation-length linear infinite,
+        wobbling 2s infinite alternate;
+    }
+  }
+  &:nth-of-type(2) {
+    .zeppelin {
+      @include zeppelin;
+      animation:
+        flying-left-2 $animation-length linear infinite,
+        wobbling 2s infinite alternate;
+    }
+  }
+  &:nth-of-type(3) {
+    .zeppelin {
+      @include zeppelin;
+      animation:
+        flying-left-3 $animation-length linear infinite,
+        wobbling 2s infinite alternate;
+    }
+  }
+}

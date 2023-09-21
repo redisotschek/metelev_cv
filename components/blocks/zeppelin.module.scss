@@ -1,0 +1,24 @@
+// transform: scaleX(-1);
+
+.zeppelin {
+  width: 200px;
+  height: 106px;
+  position: absolute;
+  &::before {
+    content: '';
+    width: 200px;
+    height: 106px;
+    background-image: url('../../app/assets/zeppelin.gif');
+    background-repeat: no-repeat;
+    background-size: 200px auto;
+  }
+}
+
+.companyInfo {
+  width: 100px;
+  height: 27px;
+  position: absolute;
+  top: 25px;
+  left: 45px;
+  font-size: 7px;
+}

@@ -18,9 +18,17 @@ body {
   margin: 0;
   font-family: 'PressStart2P', sans-serif;
   cursor: url('#{paths.$assets}cursor.png'), auto;
-  scroll-behavior: smooth !important;
-  overflow-y: hidden;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth !important;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  img {
+    pointer-events: none;
+  }
+  * {
+    user-select: none;
+  }
 }
 
 header {
@@ -36,4 +44,14 @@ header {
 
 section {
   position: relative;
+}
+
+.blueText {
+  color: colors.$triadic-blue;
+}
+.redText {
+  color: colors.$triadic-red;
+}
+.greenText {
+  color: colors.$triadic-green;
 }
