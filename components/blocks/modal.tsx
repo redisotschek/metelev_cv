@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { TfiClose as Close } from 'react-icons/tfi';
 import { Card } from './card';
 
-export default ({
+export const Modal = ({
   className,
   isOpen,
   closeFn,
@@ -23,7 +23,7 @@ export default ({
     <div
       className={`${className} fixed transform top-0 left-0 h-full w-full p-12 card z-50 rounded-md`}
     >
-      <Card className="relative h-full w-full p-5 overflow-y-auto">
+      <Card className="relative h-full w-full p-5 py-12 overflow-y-auto">
         {children}
       </Card>
       <button

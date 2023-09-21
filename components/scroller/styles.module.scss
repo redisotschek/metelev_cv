@@ -20,8 +20,10 @@ $sections-bg-colors: rgba(14, 8, 30, 1), rgba(22, 5, 73, 1), rgba(9, 69, 142, 1)
     height: 100vh;
   }
 
-  section.scroller__section {
+  section {
     scroll-snap-align: start;
+    scroll-behavior: smooth !important;
+
     height: 100vh;
   }
 

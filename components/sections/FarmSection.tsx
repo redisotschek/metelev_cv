@@ -1,16 +1,15 @@
 'use client';
 import '@/app/globals.scss';
 import styles from './farm.module.scss';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { Application, Container } from 'pixi.js';
 
 const catSpritesUrl = '/assets/cat/cat_animations.json';
 
 export default function FarmSection() {
-  type AppType = Application<HTMLCanvasElement>;
-
   useEffect(() => {
     const initCat = async () => {
+      // @ts-ignore
       const { SmartCat } = await import('@/app/src/plugins/cat');
       const app = new Application({
         resizeTo: window,
@@ -25,6 +24,7 @@ export default function FarmSection() {
         app.stage.addChild(container);
       });
 
+      // @ts-ignore
       document.getElementById('catnip').appendChild(app.view);
     };
     initCat();

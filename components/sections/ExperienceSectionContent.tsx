@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Zeppelin } from '../blocks/Zeppelin';
 import styles from './experience.module.scss';
 import { JobInfoList } from '@/app/types';
-import Modal from '../blocks/modal';
+import { Modal } from '../blocks/modal';
 import { CompanyExperience } from '@/app/components/work-experience-section';
 
 const jobs: JobInfoList = [

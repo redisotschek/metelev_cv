@@ -12,7 +12,6 @@
     "@pixi/react": "^7.1.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.4.2",
-    "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "css-doodle": "^0.35.0",
@@ -37,6 +36,7 @@
   },
   "devDependencies": {
     "@types/pixi.js": "^5.0.0",
+    "@types/react": "^18.2.22",
     "copy-webpack-plugin": "^11.0.0",
     "prettier": "^3.0.2"
   }

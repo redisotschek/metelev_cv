@@ -40,7 +40,7 @@ export const HomeSectionContent = ({ isMobileView }) => {
     <div
       className={`section flex flex-col items-center h-full max-md:pt-12 md:w-9/12 gap-5 m-auto md:justify-center`}
     >
-      <Card className="gap-4 flex max-md:flex-col-reverse md:flex-row max-md:px-2 md:px-12 items-center max-md:justify-start md:justify-around">
+      <Card className="gap-4 py-12 flex max-md:flex-col-reverse md:flex-row max-md:px-2 md:px-12 items-center max-md:justify-start md:justify-around">
         <div className="md:text-left">
           <h1 className="text-xl font-bold">
             Hi! I&apos;m <span className={'blueText'}>Dima</span>

@@ -8,7 +8,7 @@ export const Card = ({
   className?: string;
 }) => {
   return (
-    <div className={`${styles.card} ${className} rounded-md py-12 card__text`}>
+    <div className={`${styles.card} ${className} rounded-md card__text`}>
       {children}
     </div>
   );

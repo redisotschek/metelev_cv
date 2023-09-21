@@ -46,7 +46,8 @@ export const TechnologiesSectionContent = () => {
       <Card className="w-2/3 p-12">
         <h2 className="text-lg">Technologies</h2>
         <p className="mt-5">
-          This is the list of frontend technologies I'm most experienced with.
+          This is the list of frontend technologies I{`'`}m most experienced
+          with.
         </p>
       </Card>
       <div

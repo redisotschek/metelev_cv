@@ -55,11 +55,13 @@ export default function Scroller(props) {
     {
       title: 'Experience',
       id: 'experience',
+      //@ts-ignore
       content: ExperienceSectionContent(),
     },
     {
       title: 'My Place',
       id: 'farm',
+      //@ts-ignore
       content: FarmSectionContent(),
     },
     // {
@@ -96,17 +98,22 @@ export default function Scroller(props) {
           {section.content}
           <nav
             key={section.id + 'nav'}
-            className={`flex flex-col ${index === 0 ? 'justify-end' : 'justify-around'} items-end py-2 px-2 gap-10 z-50 w-max text-right ${styles.nav}`}
+            className={`flex flex-col ${
+              index === 0 ? 'justify-end' : 'justify-around'
+            } items-end py-2 px-2 gap-10 z-50 w-max text-right ${styles.nav}`}
           >
-            {!isMobileView && getSectionsAround(sectionsWithRemovedContent, section.id).map(
-              (s: any) => {
-                return (
-                  <Link key={s.id + 'link'} href={`#${s.id}`}>
-                    <Card className='p-2 py-1 w-max'><span key={s.id + 'span'}>>{s.title}</span></Card>
-                  </Link>
-                );
-              },
-            )}
+            {!isMobileView &&
+              getSectionsAround(sectionsWithRemovedContent, section.id).map(
+                (s: any) => {
+                  return (
+                    <Link key={s.id + 'link'} href={`#${s.id}`}>
+                      <Card className="p-2 py-1 w-max">
+                        <span key={s.id + 'span'}>&gt;{s.title}</span>
+                      </Card>
+                    </Link>
+                  );
+                },
+              )}
           </nav>
         </section>
       ))}
