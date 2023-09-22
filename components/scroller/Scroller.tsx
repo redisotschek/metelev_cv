@@ -47,23 +47,23 @@ export default function Scroller(props) {
       id: 'home',
       content: HomeSectionContent({ isMobileView }),
     },
-    {
-      title: 'Technologies',
-      id: 'technologies',
-      content: TechnologiesSectionContent(),
-    },
-    {
-      title: 'Experience',
-      id: 'experience',
-      //@ts-ignore
-      content: ExperienceSectionContent(),
-    },
-    {
-      title: 'My Place',
-      id: 'farm',
-      //@ts-ignore
-      content: FarmSectionContent(),
-    },
+    // {
+    //   title: 'Technologies',
+    //   id: 'technologies',
+    //   content: TechnologiesSectionContent(),
+    // },
+    // {
+    //   title: 'Experience',
+    //   id: 'experience',
+    //   //@ts-ignore
+    //   content: ExperienceSectionContent(),
+    // },
+    // {
+    //   title: 'My Place',
+    //   id: 'farm',
+    //   //@ts-ignore
+    //   content: FarmSectionContent(),
+    // },
     // {
     //   title: 'Contacts',
     //   id: 'contacts',
@@ -96,7 +96,7 @@ export default function Scroller(props) {
           className="scroller__section relative"
         >
           {section.content}
-          <nav
+          {/* <nav
             key={section.id + 'nav'}
             className={`flex flex-col ${
               index === 0 ? 'justify-end' : 'justify-around'
@@ -114,7 +114,7 @@ export default function Scroller(props) {
                   );
                 },
               )}
-          </nav>
+          </nav> */}
         </section>
       ))}
     </main>
