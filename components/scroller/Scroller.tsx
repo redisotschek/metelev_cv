@@ -75,10 +75,10 @@ export default function Scroller(props) {
     // },
   ];
 
-  const sectionsWithRemovedContent = sections.map((section) => {
-    const { content, ...rest } = section;
-    return rest;
-  });
+  // const sectionsWithRemovedContent = sections.map((section) => {
+  //   const { content, ...rest } = section;
+  //   return rest;
+  // });
 
   const getSections = () => {
     if (isMobileView) {
