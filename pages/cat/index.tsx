@@ -1,9 +1,20 @@
 'use client';
 import { useEffect } from 'react';
 import '@/app/globals.scss';
-import Link from 'next/link';
 import styles from './cat.module.scss';
 import { Application } from 'pixi.js';
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Ornge Car',
+  description: 'My Cat Casper',
+  openGraph: {
+    title: 'Dima Metelev | Ornge Car',
+    description: 'This is Casper, you can play with him :)',
+    images: '/images/thumbnail.png',
+  },
+};
 
 const catSpritesUrl = '/assets/cat/cat_animations.json';
 
