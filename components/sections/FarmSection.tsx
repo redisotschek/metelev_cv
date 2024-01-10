@@ -1,6 +1,5 @@
 'use client';
 import '@/app/globals.scss';
-import styles from './farm.module.scss';
 import { useEffect } from 'react';
 import { Application, Container } from 'pixi.js';
 
@@ -31,13 +30,13 @@ export default function FarmSection() {
   }, []);
 
   return (
-    <main className={`${styles.main} relative transform`} id="catnip">
-      <div className={styles.infoText}>
-        <h1>This Section is Under Construction :)</h1>
-      </div>
-      <footer className="absolute w-full bottom-0 text-center text-white">
-        Dimas Metelev 2023, no rights reserved
-      </footer>
-    </main>
+    // <main className={`${styles.main} relative transform`} id="catnip">
+    //   <div className={styles.infoText}>
+    //     <h1>This Section is Under Construction :)</h1>
+    //   </div>
+    //   <footer className="absolute w-full bottom-0 text-center text-white">
+    //     Dimas Metelev 2023, no rights reserved
+    //   </footer>
+    // </main>
   );
 }

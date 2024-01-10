@@ -61,14 +61,14 @@ export const HomeSectionContent = ({ isMobileView }) => {
             </Link>
           </div>
         </div>
-        <div>
+        <a href="/cat">
           <Image
             src="/images/big.PNG"
             width={isMobileView ? 200 : 500}
             height={isMobileView ? 200 : 500}
             alt="me"
           ></Image>
-        </div>
+        </a>
       </Card>
       <div
         className={

@@ -8,9 +8,9 @@ import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { Card } from '../blocks/card';
 
-const FarmSectionContent = dynamic(() => import('../sections/FarmSection'), {
-  ssr: false,
-});
+// const FarmSectionContent = dynamic(() => import('../sections/FarmSection'), {
+//   ssr: false,
+// });
 const ExperienceSectionContent = dynamic(
   () => import('../sections/ExperienceSectionContent'),
   {
