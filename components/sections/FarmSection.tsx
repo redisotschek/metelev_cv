@@ -29,14 +29,5 @@ export default function FarmSection() {
     initCat();
   }, []);
 
-  return (
-    // <main className={`${styles.main} relative transform`} id="catnip">
-    //   <div className={styles.infoText}>
-    //     <h1>This Section is Under Construction :)</h1>
-    //   </div>
-    //   <footer className="absolute w-full bottom-0 text-center text-white">
-    //     Dimas Metelev 2023, no rights reserved
-    //   </footer>
-    // </main>
-  );
+  return;
 }
